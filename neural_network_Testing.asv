@@ -1,0 +1,11 @@
+function [outputs, errors,performance]=neural_network_Testing(i)
+inputs=transpose(inputs);
+targets=transpose(targets);
+% Test the Network
+outputs = net(inputs);
+errors = gsubtract(targets,outputs);
+performance = perform(net,targets,outputs);
+%Plots
+figure, plotconfusion(targets,outputs);
+figure, ploterrhist(errors);
+

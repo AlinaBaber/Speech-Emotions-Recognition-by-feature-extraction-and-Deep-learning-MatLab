@@ -1,0 +1,29 @@
+function [Category,Category_Percentage,Emotion,Emotion_Percentage]=hybrid_Decision_making(wav_file)
+[Categories_output,Emotions_output]=hybrid_Classification(wav_file);
+ [rn,cn]=find(strcmp(Categories_output,max(Categories_output)));
+ if (rn ==1)
+     Category='Normal';
+     Category_Percentage=Categories_output(1);
+ else
+     Category='	Special';
+     Category_Percentage=Categories_output(2);
+ end
+ [rn,cn]=find(strcmp(Categories_output,max(Categories_output)));
+ if (rn ==1)
+     Category='Angry';
+     Category_Percentage=Categories_output(1);
+ end
+ if (rn ==2)
+     Category='	Happy';
+     Category_Percentage=Categories_output(2);
+ end
+ if (rn ==3)
+     Category='	Neutral';
+     Category_Percentage=Categories_output(3);
+ end
+ if (rn ==4)
+     Category='	Sad';
+     Category_Percentage=Categories_output(4);
+end
+ 
+ 
