@@ -1,0 +1,6 @@
+function Hybrid_Features= hybrid_features_extraction(wav_file)
+[SVMCategory,SVMCategory_score,SVMCategories_error,SVMCategory_cost,SVMEmotion,SVMEmotion_Score,SVMEmotion_Cost,SVMEmotion_Error] = svm_classification(wav_file);
+[KNNCategory,KNNCategory_score,KNNCategories_error,KNNCategory_cost,KNNEmotion,KNNEmotion_score,KNNEmotion_error,KNNEmotion_cost] = knn_classification(wav_file);
+[NNCategory,NNCategory_cost,NNCategory_output,NNCategory_error,NNEmotion,NNEmotion_cost,NNEmotions_output,NNEmotion_error]=neural_network_classification(wav_file);
+[DTWCategory,DTWCategory_Cost,DTWCategory_Score,DTWCategory_Error,~,DTWEmotion,DTWEmotion_Cost,DTWEmotion_Score,DTWEmotion_Error,DTW_Emotions] = comparison(wav_file);
+Hybrid_Features=[SVMCategory_cost,SVMCategory_score,SVMEmotion_Cost,SVMEmotion_Score,KNNCategory_cost,KNNCategory_score,KNNEmotion_cost,KNNEmotion_score,NNCategory_cost,transpose(NNCategory_output),NNEmotion_cost,transpose(NNEmotions_output),DTWCategory_Cost,DTWCategory_Score,DTWEmotion_Cost,DTWEmotion_Score];

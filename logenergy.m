@@ -1,0 +1,9 @@
+function [Average_Energy]= logenergy(wav_file)
+[son,Fs]=readwav(wav_file);
+sampling_rate = Fs; 
+windowsize_s = 0.020;
+windowsize = sampling_rate*windowsize_s;
+framesize_s = 0.010;
+framesize = sampling_rate*framesize_s;
+[result, nframes] = windowize(son, windowsize, framesize);
+[Average_Energy] = average_energy(result);
