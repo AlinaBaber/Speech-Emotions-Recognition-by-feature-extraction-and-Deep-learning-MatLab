@@ -19,8 +19,12 @@ The project introduces the first-ever **Urdu speech dataset** for emotion recogn
 5. **Comparative Analysis**:
    - Comparison of normal and autistic speech patterns at the audio signal level.
    - Detailed error rates and performance metrics for classification algorithms.
-
 ---
+## Demostration
+![464832052_27429708910007088_361722359150592736_n](https://github.com/user-attachments/assets/78517d76-ab9d-42cb-9f41-766b916085d4)
+## Flow Diagram
+![image](https://github.com/user-attachments/assets/43796264-a24b-4349-8f0c-990a390f9d49)
+
 
 ## 📊 Performance Summary
 ### Classification Algorithms:
